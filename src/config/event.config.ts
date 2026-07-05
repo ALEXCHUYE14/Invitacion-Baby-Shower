@@ -1,3 +1,6 @@
+import bgImage from '../assets/fondo-bienvenida.png';
+import babyImage from '../assets/bebe.jpeg';
+
 export const EVENT = {
   celebration: 'Baby Shower',
   parents: { mom: 'Daleska', dad: 'Junior' },
@@ -21,6 +24,6 @@ export const EVENT = {
     'Tu presencia es nuestro mejor regalo. Si además deseas consentir al bebé, aquí te dejamos algunas ideas.',
   footerNote: '01 · 08 · 2026  ·  Piura',
   audioSrc: '/assets/audio/te-esperaba.mp3',
-  bgImage: '/assets/fondo-bienvenida.png',
-  babyImage: '/assets/bebe.jpeg',
+  bgImage,
+  babyImage,
 } as const;

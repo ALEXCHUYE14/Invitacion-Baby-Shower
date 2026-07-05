@@ -18,19 +18,19 @@ export function SplashScreen({ isLeaving, onEnter }: SplashScreenProps) {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'radial-gradient(120% 90% at 50% 12%, rgba(250,246,240,.10), transparent 60%), linear-gradient(180deg, rgba(59,55,66,.28) 0%, rgba(59,55,66,.10) 40%, rgba(59,55,66,.38) 100%)',
+            'radial-gradient(120% 70% at 50% 42%, rgba(250,246,240,.55), transparent 65%), linear-gradient(180deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.22) 45%, rgba(255,255,255,.05) 100%)',
         }}
       />
 
-      <div className="relative z-[1] max-w-[440px] text-white">
-        <p className="mb-[22px] pl-2 font-sans text-[0.72rem] font-light uppercase tracking-[0.5em] [text-shadow:0_1px_12px_rgba(0,0,0,.35)]">
+      <div className="relative z-[1] max-w-[440px] text-ink">
+        <p className="mb-[22px] pl-2 font-sans text-[0.72rem] font-light uppercase tracking-[0.5em] [text-shadow:0_1px_14px_rgba(255,255,255,.85)]">
           {EVENT.welcomeEyebrow}
         </p>
-        <h1 className="font-serif text-[clamp(2.6rem,12vw,3.9rem)] font-medium leading-[1.04] [text-shadow:0_2px_24px_rgba(0,0,0,.35)]">
+        <h1 className="font-serif text-[clamp(2.6rem,12vw,3.9rem)] font-medium leading-[1.04] [text-shadow:0_2px_20px_rgba(255,255,255,.9)]">
           {EVENT.celebration}
         </h1>
-        <p className="mt-5 font-emot text-[clamp(1.15rem,5vw,1.4rem)] italic opacity-95 [text-shadow:0_1px_12px_rgba(0,0,0,.4)]">
-          {EVENT.parents.mom} <span className="font-emot italic text-goldSoft">&amp;</span> {EVENT.parents.dad}
+        <p className="mt-5 font-emot text-[clamp(1.15rem,5vw,1.4rem)] italic [text-shadow:0_1px_14px_rgba(255,255,255,.9)]">
+          {EVENT.parents.mom} <span className="font-emot italic text-gold">&amp;</span> {EVENT.parents.dad}
         </p>
         <div className="mx-auto my-[26px] text-[0.7rem] tracking-[0.4em] text-gold">✦ &nbsp;·&nbsp; ✦</div>
 
@@ -43,7 +43,9 @@ export function SplashScreen({ isLeaving, onEnter }: SplashScreenProps) {
           <span className="h-1.5 w-1.5 rounded-full bg-gold" />
           Abrir invitación
         </button>
-        <p className="mt-5 text-[0.68rem] uppercase tracking-[0.15em] opacity-80">{EVENT.welcomeHint}</p>
+        <p className="mt-5 text-[0.68rem] uppercase tracking-[0.15em] text-inkSoft [text-shadow:0_1px_10px_rgba(255,255,255,.85)]">
+          {EVENT.welcomeHint}
+        </p>
       </div>
     </section>
   );

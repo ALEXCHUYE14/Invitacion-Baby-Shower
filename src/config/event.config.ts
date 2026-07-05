@@ -4,6 +4,7 @@ import babyImage from '../assets/bebe.jpeg';
 export const EVENT = {
   celebration: 'Baby Shower',
   parents: { mom: 'Daleska', dad: 'Junior' },
+  babyName: 'Renato Alessandro',
   welcomeEyebrow: 'Nos llena de amor invitarte',
   welcomeHint: 'Toca para entrar · con música 🎵',
   heroEyebrow: 'Con todo nuestro amor',

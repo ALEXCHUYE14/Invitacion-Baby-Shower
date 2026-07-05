@@ -21,7 +21,15 @@ export function BabySection() {
           </div>
         </RevealOnScroll>
         <RevealOnScroll>
-          <p className="mx-auto mt-[34px] max-w-[20ch] font-emot text-[clamp(1.25rem,5.6vw,1.6rem)] italic leading-[1.45] text-ink">
+          <p className="mt-[26px] font-sans text-[0.7rem] font-light uppercase tracking-[0.4em] text-inkSoft">
+            Nuestro bebé se llama
+          </p>
+          <h2 className="mt-2 font-serif text-[clamp(2rem,9vw,2.6rem)] font-medium text-ink">
+            {EVENT.babyName}
+          </h2>
+        </RevealOnScroll>
+        <RevealOnScroll>
+          <p className="mx-auto mt-[22px] max-w-[20ch] font-emot text-[clamp(1.25rem,5.6vw,1.6rem)] italic leading-[1.45] text-ink">
             {EVENT.babyPhrase}
           </p>
         </RevealOnScroll>

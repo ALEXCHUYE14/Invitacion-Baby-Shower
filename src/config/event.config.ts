@@ -2,6 +2,7 @@ import bgImage from '../assets/fondo-bienvenida.png';
 import babyImage from '../assets/bebe.jpeg';
 import heroBgImage from '../assets/inicio.png';
 import rsvpBgImage from '../assets/final.png';
+import countdownBgImage from '../assets/fondo-cuenta-regresiva.png';
 
 export const EVENT = {
   celebration: 'Baby Shower',
@@ -31,4 +32,5 @@ export const EVENT = {
   babyImage,
   heroBgImage,
   rsvpBgImage,
+  countdownBgImage,
 } as const;

@@ -5,9 +5,8 @@ import { BabySection } from './components/sections/BabySection';
 import { Countdown } from './components/sections/Countdown';
 import { EventDetails } from './components/sections/EventDetails';
 import { Footer } from './components/sections/Footer';
-import { GiftList } from './components/sections/GiftList';
+import { GiftRsvpSection } from './components/sections/GiftRsvpSection';
 import { Hero } from './components/sections/Hero';
-import { RsvpForm } from './components/sections/RsvpForm';
 import { EVENT } from './config/event.config';
 import { useAudioPlayer } from './hooks/useAudioPlayer';
 
@@ -45,8 +44,7 @@ export default function App() {
         <BabySection />
         <EventDetails />
         <Countdown />
-        <GiftList />
-        <RsvpForm />
+        <GiftRsvpSection />
         <Footer />
       </main>
 

@@ -10,8 +10,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
-  gold: 'bg-gold text-paper hover:bg-[#a6844f]',
-  ink: 'bg-ink text-paper hover:bg-[#2c2933]',
+  gold: 'bg-gradient-to-r from-saiyan to-saiyanGold text-paper shadow-[0_10px_28px_-10px_rgba(232,121,43,.6)] hover:from-saiyanDeep hover:to-saiyan hover:animate-aura focus-visible:animate-aura',
+  ink: 'bg-ink text-paper hover:bg-kiBlue',
   paper: 'bg-paper text-ink shadow-[0_10px_30px_rgba(59,55,66,0.28)] hover:bg-white',
 };
 

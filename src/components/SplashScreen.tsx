@@ -38,9 +38,9 @@ export function SplashScreen({ isLeaving, onEnter }: SplashScreenProps) {
           type="button"
           onClick={onEnter}
           aria-label="Abrir la invitación y reproducir música"
-          className="mt-3 inline-flex items-center gap-3 rounded-full bg-paper px-[34px] py-4 font-sans text-[0.78rem] uppercase tracking-[0.22em] text-ink shadow-[0_10px_30px_rgba(59,55,66,.28)] transition-all duration-[350ms] ease-signature hover:-translate-y-[3px] hover:bg-white hover:shadow-[0_16px_38px_rgba(59,55,66,.34)] active:translate-y-0"
+          className="mt-3 inline-flex items-center gap-3 rounded-full bg-paper px-[34px] py-4 font-sans text-[0.78rem] uppercase tracking-[0.22em] text-ink shadow-[0_10px_30px_rgba(59,55,66,.28)] transition-all duration-[350ms] ease-signature hover:-translate-y-[3px] hover:bg-white hover:shadow-[0_16px_38px_rgba(59,55,66,.34)] hover:animate-aura active:translate-y-0"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+          <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-br from-saiyan to-saiyanGold" />
           Abrir invitación
         </button>
         <p className="mt-5 text-[0.68rem] uppercase tracking-[0.15em] text-inkSoft [text-shadow:0_1px_10px_rgba(255,255,255,.85)]">

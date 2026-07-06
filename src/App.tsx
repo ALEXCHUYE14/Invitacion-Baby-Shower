@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AudioToggle } from './components/AudioToggle';
+import { ParallaxSection } from './components/ParallaxSection';
 import { SplashScreen } from './components/SplashScreen';
 import { BabySection } from './components/sections/BabySection';
 import { Countdown } from './components/sections/Countdown';
@@ -7,6 +8,7 @@ import { EventDetails } from './components/sections/EventDetails';
 import { Footer } from './components/sections/Footer';
 import { GiftRsvpSection } from './components/sections/GiftRsvpSection';
 import { Hero } from './components/sections/Hero';
+import { ParentsSection } from './components/sections/ParentsSection';
 import { EVENT } from './config/event.config';
 import { useAudioPlayer } from './hooks/useAudioPlayer';
 
@@ -40,12 +42,21 @@ export default function App() {
           hasEntered ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        <Hero />
-        <BabySection />
-        <EventDetails />
-        <Countdown />
-        <GiftRsvpSection />
-        <Footer />
+        <ParallaxSection bgImage={EVENT.heroBgImage}>
+          <Hero />
+          <BabySection />
+        </ParallaxSection>
+
+        <ParallaxSection bgImage={EVENT.countdownBgImage}>
+          <EventDetails />
+          <Countdown />
+          <ParentsSection />
+        </ParallaxSection>
+
+        <ParallaxSection bgImage={EVENT.rsvpBgImage}>
+          <GiftRsvpSection />
+          <Footer />
+        </ParallaxSection>
       </main>
 
       <AudioToggle isPlaying={audio.isPlaying} isVisible={hasEntered} onToggle={audio.toggle} />

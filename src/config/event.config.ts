@@ -3,6 +3,7 @@ import babyImage from '../assets/bebe.jpeg';
 import heroBgImage from '../assets/inicio.png';
 import rsvpBgImage from '../assets/final.png';
 import countdownBgImage from '../assets/fondo-cuenta-regresiva.png';
+import parentsImage from '../assets/papis.png';
 
 export const EVENT = {
   celebration: 'Baby Shower',
@@ -13,6 +14,8 @@ export const EVENT = {
   heroEyebrow: 'Con todo nuestro amor',
   heroLine: 'Te esperamos para celebrar la llegada de nuestro mayor regalo',
   babyPhrase: 'Esperando con amor a nuestro pedacito de cielo',
+  parentsEyebrow: 'Con amor, los papis',
+  parentsPhrase: 'Mamá y papá esperando a nuestro pequeño guerrero',
   date: '2026-08-01T16:30:00-05:00', // 1 de agosto 2026, 4:30 PM, hora Perú (UTC-5)
   dateLabel: 'Sábado 01 de Agosto',
   dateYearLabel: 'Año 2026',
@@ -33,4 +36,5 @@ export const EVENT = {
   heroBgImage,
   rsvpBgImage,
   countdownBgImage,
+  parentsImage,
 } as const;

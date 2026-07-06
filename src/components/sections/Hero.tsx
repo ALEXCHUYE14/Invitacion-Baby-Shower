@@ -3,7 +3,10 @@ import { RevealOnScroll } from '../RevealOnScroll';
 
 export function Hero() {
   return (
-    <header className="relative overflow-hidden py-[clamp(64px,16vw,96px)] pb-[clamp(40px,10vw,60px)] text-center">
+    <header
+      className="relative overflow-hidden bg-cover bg-center py-[clamp(64px,16vw,96px)] pb-[clamp(40px,10vw,60px)] text-center"
+      style={{ backgroundImage: `url(${EVENT.heroBgImage})` }}
+    >
       <div
         className="pointer-events-none absolute left-1/2 top-[8%] h-[70%] w-[130%] -translate-x-1/2 blur-[6px]"
         style={{

@@ -1,5 +1,7 @@
 import bgImage from '../assets/fondo-bienvenida.png';
 import babyImage from '../assets/bebe.jpeg';
+import heroBgImage from '../assets/inicio.png';
+import rsvpBgImage from '../assets/final.png';
 
 export const EVENT = {
   celebration: 'Baby Shower',
@@ -27,4 +29,6 @@ export const EVENT = {
   audioSrc: '/assets/audio/te-esperaba.mp3',
   bgImage,
   babyImage,
+  heroBgImage,
+  rsvpBgImage,
 } as const;

@@ -1,5 +1,6 @@
 import { Check } from 'lucide-react';
 import { useState, type FormEvent } from 'react';
+import { EVENT } from '../../config/event.config';
 import { useRsvp } from '../../hooks/useRsvp';
 import { RevealOnScroll } from '../RevealOnScroll';
 import { Button } from '../ui/Button';
@@ -21,7 +22,10 @@ export function RsvpForm() {
   };
 
   return (
-    <section className="py-[clamp(44px,11vw,68px)] pb-[clamp(20px,6vw,34px)]">
+    <section
+      className="bg-cover bg-center py-[clamp(44px,11vw,68px)] pb-[clamp(20px,6vw,34px)]"
+      style={{ backgroundImage: `url(${EVENT.rsvpBgImage})` }}
+    >
       <div className="mx-auto w-full max-w-[560px] px-[clamp(22px,6vw,34px)]">
         <RevealOnScroll className="mb-[34px] text-center">
           <p className="font-sans text-[0.68rem] font-light uppercase tracking-[0.4em] text-inkSoft">Cuéntanos</p>

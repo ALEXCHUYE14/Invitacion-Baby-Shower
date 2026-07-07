@@ -32,10 +32,10 @@ export function Countdown() {
     <section className="py-[clamp(30px,8vw,52px)] pb-[clamp(46px,11vw,66px)] text-center">
       <div className="mx-auto w-full max-w-[560px] px-[clamp(22px,6vw,34px)]">
         <RevealOnScroll className="mb-[34px]">
-          <p className="font-sans text-[0.68rem] font-light uppercase tracking-[0.4em] text-paper [text-shadow:0_2px_10px_rgba(0,0,0,.6)]">
+          <p className="text-crisp font-sans text-[0.68rem] font-light uppercase tracking-[0.4em] text-paper">
             La cuenta regresiva
           </p>
-          <h2 className="mt-2 font-serif text-[clamp(1.9rem,8vw,2.5rem)] font-medium text-paper [text-shadow:0_4px_16px_rgba(0,0,0,.65)]">
+          <h2 className="text-crisp-lg mt-2 font-serif text-[clamp(1.9rem,8vw,2.5rem)] font-medium text-paper">
             Falta muy poco
           </h2>
           <div className="mx-auto mt-[18px] h-px w-11 bg-goldSoft" />
@@ -47,7 +47,7 @@ export function Countdown() {
             style={{ background: 'radial-gradient(70% 70% at 50% 40%, rgba(232,121,43,.3), transparent 66%)' }}
           />
           {isDone ? (
-            <p className="font-emot text-[1.6rem] italic text-paper [text-shadow:0_2px_12px_rgba(0,0,0,.6)]">
+            <p className="text-crisp font-emot text-[1.6rem] font-medium italic text-paper">
               {EVENT.countdownDoneMessage}
             </p>
           ) : (
@@ -62,7 +62,7 @@ export function Countdown() {
 
         {!isDone && (
           <RevealOnScroll>
-            <p className="mt-[26px] font-emot text-[1.15rem] italic text-goldSoft [text-shadow:0_2px_10px_rgba(0,0,0,.6)]">
+            <p className="text-crisp mt-[26px] font-emot text-[1.15rem] font-medium italic text-saiyan">
               {EVENT.countdownNote}
             </p>
           </RevealOnScroll>

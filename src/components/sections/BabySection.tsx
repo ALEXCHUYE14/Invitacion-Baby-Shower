@@ -21,19 +21,19 @@ export function BabySection() {
           </div>
         </RevealOnScroll>
         <RevealOnScroll>
-          <p className="mt-[26px] font-sans text-[0.7rem] font-light uppercase tracking-[0.4em] text-paper [text-shadow:0_2px_10px_rgba(0,0,0,.6)]">
+          <p className="text-crisp mt-[26px] font-sans text-[0.7rem] font-light uppercase tracking-[0.4em] text-paper">
             Nuestro bebé se llama
           </p>
-          <h2 className="mt-2 font-serif text-[clamp(2rem,9vw,2.6rem)] font-medium text-paper [text-shadow:0_4px_16px_rgba(0,0,0,.65)]">
+          <h2 className="text-crisp-lg mt-2 font-serif text-[clamp(2rem,9vw,2.6rem)] font-medium text-paper">
             {EVENT.babyName}
           </h2>
         </RevealOnScroll>
         <RevealOnScroll>
-          <p className="mx-auto mt-[22px] max-w-[20ch] font-emot text-[clamp(1.25rem,5.6vw,1.6rem)] italic leading-[1.45] text-goldSoft [text-shadow:0_2px_10px_rgba(0,0,0,.6)]">
+          <p className="text-crisp mx-auto mt-[22px] max-w-[20ch] font-emot text-[clamp(1.25rem,5.6vw,1.6rem)] font-medium italic leading-[1.45] text-saiyan">
             {EVENT.babyPhrase}
           </p>
         </RevealOnScroll>
-        <RevealOnScroll className="mt-[22px] text-[0.7rem] tracking-[0.4em] text-saiyanGold [text-shadow:0_1px_8px_rgba(0,0,0,.6)]">
+        <RevealOnScroll className="text-crisp mt-[22px] text-[0.7rem] tracking-[0.4em] text-saiyan">
           ✦ &nbsp;·&nbsp; ✦
         </RevealOnScroll>
       </div>

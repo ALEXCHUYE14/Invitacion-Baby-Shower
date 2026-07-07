@@ -6,7 +6,7 @@ export function ParentsSection() {
     <section className="py-[clamp(36px,9vw,56px)] text-center">
       <div className="mx-auto w-full max-w-[560px] px-[clamp(22px,6vw,34px)]">
         <RevealOnScroll>
-          <p className="mb-[18px] font-sans text-[0.7rem] font-light uppercase tracking-[0.4em] text-paper [text-shadow:0_2px_10px_rgba(0,0,0,.6)]">
+          <p className="text-crisp mb-[18px] font-sans text-[0.7rem] font-light uppercase tracking-[0.4em] text-paper">
             {EVENT.parentsEyebrow}
           </p>
         </RevealOnScroll>
@@ -31,7 +31,7 @@ export function ParentsSection() {
         </RevealOnScroll>
 
         <RevealOnScroll>
-          <p className="mx-auto mt-[26px] max-w-[26ch] font-emot text-[clamp(1.15rem,5vw,1.45rem)] italic leading-[1.45] text-goldSoft [text-shadow:0_2px_10px_rgba(0,0,0,.6)]">
+          <p className="text-crisp mx-auto mt-[26px] max-w-[26ch] font-emot text-[clamp(1.15rem,5vw,1.45rem)] font-medium italic leading-[1.45] text-saiyan">
             Papá {EVENT.parents.dad} &amp; mamá {EVENT.parents.mom}, {EVENT.parentsPhrase}
           </p>
         </RevealOnScroll>

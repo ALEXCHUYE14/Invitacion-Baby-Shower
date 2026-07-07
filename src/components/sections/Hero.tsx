@@ -13,21 +13,21 @@ export function Hero() {
       />
       <div className="relative mx-auto w-full max-w-[560px] px-[clamp(22px,6vw,34px)]">
         <RevealOnScroll>
-          <p className="mb-[18px] pl-2 font-sans text-[0.7rem] font-light uppercase tracking-[0.45em] text-paper [text-shadow:0_2px_10px_rgba(0,0,0,.6)]">
+          <p className="text-crisp mb-[18px] pl-2 font-sans text-[0.7rem] font-light uppercase tracking-[0.45em] text-paper">
             {EVENT.heroEyebrow}
           </p>
         </RevealOnScroll>
         <RevealOnScroll>
-          <h1 className="font-serif text-[clamp(2.9rem,15vw,4.4rem)] font-medium leading-[1.02] text-paper [text-shadow:0_4px_18px_rgba(0,0,0,.65)]">
+          <h1 className="text-crisp-lg font-serif text-[clamp(2.9rem,15vw,4.4rem)] font-medium leading-[1.02] text-paper">
             {EVENT.parents.mom}
-            <span className="my-[0.06em] block font-emot text-[0.42em] italic font-normal text-saiyanGold [text-shadow:0_2px_14px_rgba(0,0,0,.55)]">
+            <span className="text-crisp my-[0.06em] block font-emot text-[0.42em] italic font-medium text-saiyan">
               &amp;
             </span>
             {EVENT.parents.dad}
           </h1>
         </RevealOnScroll>
         <RevealOnScroll>
-          <p className="mx-auto mt-[22px] max-w-[22ch] font-emot text-[clamp(1.2rem,5.4vw,1.55rem)] italic text-goldSoft [text-shadow:0_2px_10px_rgba(0,0,0,.6)]">
+          <p className="text-crisp mx-auto mt-[22px] max-w-[22ch] font-emot text-[clamp(1.2rem,5.4vw,1.55rem)] font-medium italic text-saiyan">
             {EVENT.heroLine}
           </p>
         </RevealOnScroll>

@@ -98,17 +98,17 @@ export function GiftRsvpSection() {
     <section className="py-[clamp(44px,11vw,68px)] pb-[clamp(20px,6vw,34px)]">
       <div className="mx-auto w-full max-w-[560px] px-[clamp(22px,6vw,34px)]">
         <RevealOnScroll className="mb-[34px] text-center">
-          <p className="font-sans text-[0.68rem] font-light uppercase tracking-[0.4em] text-paper [text-shadow:0_2px_10px_rgba(0,0,0,.6)]">
+          <p className="text-crisp font-sans text-[0.68rem] font-light uppercase tracking-[0.4em] text-paper">
             Cuéntanos
           </p>
-          <h2 className="mt-2 font-serif text-[clamp(1.9rem,8vw,2.5rem)] font-medium text-paper [text-shadow:0_4px_16px_rgba(0,0,0,.65)]">
+          <h2 className="text-crisp-lg mt-2 font-serif text-[clamp(1.9rem,8vw,2.5rem)] font-medium text-paper">
             Confirma tu asistencia
           </h2>
           <div className="mx-auto mt-[18px] h-px w-11 bg-goldSoft" />
         </RevealOnScroll>
 
         <RevealOnScroll>
-          <p className="mx-auto mb-[24px] max-w-[28ch] text-center font-emot text-[clamp(1.1rem,4.6vw,1.3rem)] italic leading-relaxed text-goldSoft [text-shadow:0_2px_10px_rgba(0,0,0,.6)]">
+          <p className="text-crisp mx-auto mb-[24px] max-w-[28ch] text-center font-emot text-[clamp(1.1rem,4.6vw,1.3rem)] font-medium italic leading-relaxed text-saiyan">
             {EVENT.giftsIntro}
           </p>
         </RevealOnScroll>

@@ -77,9 +77,9 @@ Cada vez que alguien confirma asistencia, la app **siempre** guarda primero en S
 
 1. Abre tu spreadsheet: https://docs.google.com/spreadsheets/d/1FDDgW3f8_BsfF1GChbaYTMFz-5dlN0pXyWlvDDZJnnA/edit
 2. Menú **Extensiones → Apps Script**.
-3. Borra el contenido de `Code.gs` y pega esto:
+3. Borra **todo** el contenido de `Code.gs`. Pega **exactamente desde la palabra `function`** (primera línea de abajo) **hasta la última `}`** — nada antes, nada después. Si tu archivo termina con la primera línea diciendo "javascript", bórrala: eso no es código, es una etiqueta que se coló al copiar.
 
-```javascript
+```
 function doPost(e) {
   try {
     var data = JSON.parse(e.postData.contents);
@@ -129,7 +129,7 @@ function doPost(e) {
 Pega esa URL como variable de entorno:
 
 ```
-VITE_GOOGLE_SHEETS_URL=https://script.google.com/macros/s/AKfycbwBReZbUm0trTipowXBArd0uJW49wzNOSAKx24P0CeJ-rDLLpSMnUAcFHdqxwZrSF92/exec
+VITE_GOOGLE_SHEETS_URL=https://script.google.com/macros/s/AKfycbzVoLAViPjWOQkC1Blyvm6AMvX46JPKAgwdBMocOuta5ceuaS0WpHh-H42Mn7SptZmNOw/exec
 ```
 
 - **En local:** agrégala a tu `.env`.

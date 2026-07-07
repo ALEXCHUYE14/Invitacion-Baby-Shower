@@ -8,10 +8,10 @@ export function EventDetails() {
     <section className="py-[clamp(40px,10vw,64px)]">
       <div className="mx-auto w-full max-w-[560px] px-[clamp(22px,6vw,34px)]">
         <RevealOnScroll className="mb-[34px] text-center">
-          <p className="font-sans text-[0.68rem] font-light uppercase tracking-[0.4em] text-paper [text-shadow:0_2px_10px_rgba(0,0,0,.6)]">
+          <p className="text-crisp font-sans text-[0.68rem] font-light uppercase tracking-[0.4em] text-paper">
             Los detalles
           </p>
-          <h2 className="mt-2 font-serif text-[clamp(1.9rem,8vw,2.5rem)] font-medium text-paper [text-shadow:0_4px_16px_rgba(0,0,0,.65)]">
+          <h2 className="text-crisp-lg mt-2 font-serif text-[clamp(1.9rem,8vw,2.5rem)] font-medium text-paper">
             El gran día
           </h2>
           <div className="mx-auto mt-[18px] h-px w-11 bg-goldSoft" />

@@ -30,6 +30,7 @@ export const EVENT = {
   countdownDoneMessage: '¡Hoy es el gran día!',
   giftsIntro:
     'Tu presencia es nuestro mejor regalo. Si además deseas consentir al bebé, aquí te dejamos algunas ideas.',
+  rsvpDeadlineNote: 'Tienen solo 2 días para confirmar asistencia',
   footerNote: '01 · 08 · 2026  ·  Piura',
   audioSrc: '/assets/audio/Mi%20Corazon%20Encantado.mp3',
   bgImage,

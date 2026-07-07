@@ -1,4 +1,4 @@
-import { Check } from 'lucide-react';
+import { Check, Clock } from 'lucide-react';
 import { useMemo, useState, type FormEvent } from 'react';
 import { EVENT } from '../../config/event.config';
 import { useGifts } from '../../hooks/useGifts';
@@ -109,6 +109,13 @@ export function GiftRsvpSection() {
             Confirma tu asistencia
           </h2>
           <div className="mx-auto mt-[18px] h-px w-11 bg-goldSoft" />
+        </RevealOnScroll>
+
+        <RevealOnScroll className="mb-[22px] flex justify-center">
+          <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-saiyan to-saiyanGold px-4 py-2 font-sans text-[0.72rem] font-medium uppercase tracking-[0.06em] text-paper shadow-[0_8px_22px_-8px_rgba(232,121,43,.65)]">
+            <Clock size={14} />
+            {EVENT.rsvpDeadlineNote}
+          </span>
         </RevealOnScroll>
 
         <RevealOnScroll>
@@ -242,10 +249,10 @@ export function GiftRsvpSection() {
                 <div className="mb-1.5">
                   <Textarea
                     id="message"
-                    label="Mensaje para los papis (opcional)"
+                    label="Lista de deseos"
                     value={message}
                     onChange={(event) => setMessage(event.target.value)}
-                    placeholder="Déjales unas palabras bonitas…"
+                    placeholder="Cuéntanos qué le gustaría recibir al bebé…"
                   />
                 </div>
 

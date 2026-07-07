@@ -6,10 +6,10 @@ export function Footer() {
     <footer className="py-[clamp(40px,10vw,60px)] pb-[clamp(70px,16vw,90px)] text-center">
       <RevealOnScroll>
         <div className="text-crisp-lg font-serif text-[2rem] italic text-saiyan">
-          {EVENT.parents.mom[0]} &amp; {EVENT.parents.dad[0]}
+          {EVENT.parents.dad[0]} &amp; {EVENT.parents.mom[0]}
         </div>
         <p className="text-crisp mt-2.5 font-emot text-[1.15rem] font-medium italic text-saiyan">
-          Con amor, {EVENT.parents.mom} y {EVENT.parents.dad}
+          Con amor, {EVENT.parents.dad} y {EVENT.parents.mom}
         </p>
         <p className="text-crisp mt-[22px] font-sans text-[0.66rem] font-light uppercase tracking-[0.24em] text-paper/80">
           {EVENT.footerNote}

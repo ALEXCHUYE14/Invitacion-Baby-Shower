@@ -19,11 +19,11 @@ export function Hero() {
         </RevealOnScroll>
         <RevealOnScroll>
           <h1 className="text-crisp-lg font-serif text-[clamp(2.9rem,15vw,4.4rem)] font-medium leading-[1.02] text-paper">
-            {EVENT.parents.mom}
+            {EVENT.parents.dad}
             <span className="text-crisp my-[0.06em] block font-emot text-[0.42em] italic font-medium text-saiyan">
               &amp;
             </span>
-            {EVENT.parents.dad}
+            {EVENT.parents.mom}
           </h1>
         </RevealOnScroll>
         <RevealOnScroll>

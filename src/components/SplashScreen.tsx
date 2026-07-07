@@ -30,7 +30,7 @@ export function SplashScreen({ isLeaving, onEnter }: SplashScreenProps) {
           {EVENT.celebration}
         </h1>
         <p className="mt-5 font-emot text-[clamp(1.15rem,5vw,1.4rem)] italic [text-shadow:0_1px_14px_rgba(255,255,255,.9)]">
-          {EVENT.parents.mom} <span className="font-emot italic text-gold">&amp;</span> {EVENT.parents.dad}
+          {EVENT.parents.dad} <span className="font-emot italic text-gold">&amp;</span> {EVENT.parents.mom}
         </p>
         <div className="mx-auto my-[26px] text-[0.7rem] tracking-[0.4em] text-gold">✦ &nbsp;·&nbsp; ✦</div>
 

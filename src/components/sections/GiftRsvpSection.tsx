@@ -3,6 +3,7 @@ import { useMemo, useState, type FormEvent } from 'react';
 import { EVENT } from '../../config/event.config';
 import { useGifts } from '../../hooks/useGifts';
 import { useRsvp } from '../../hooks/useRsvp';
+import { sendToGoogleSheets } from '../../lib/googleSheets';
 import type { Gift } from '../../types';
 import { RevealOnScroll } from '../RevealOnScroll';
 import { Button } from '../ui/Button';
@@ -63,17 +64,30 @@ export function GiftRsvpSection() {
       return;
     }
 
-    await submitRsvp({ fullName, attending: attending === 'yes', message: message || undefined });
+    const rsvpSaved = await submitRsvp({ fullName, attending: attending === 'yes', message: message || undefined });
 
+    let outcome: GiftOutcome = null;
     if (attending === 'yes' && selectedGift) {
       setIsReserving(true);
       try {
         await reserveGift({ giftId: selectedGift.id, guestName: fullName, guestPhone: phone || undefined, qty: 1 });
-        setGiftOutcome('reserved');
+        outcome = 'reserved';
       } catch {
-        setGiftOutcome('failed');
+        outcome = 'failed';
       }
+      setGiftOutcome(outcome);
       setIsReserving(false);
+    }
+
+    if (rsvpSaved) {
+      sendToGoogleSheets({
+        fullName,
+        attending: attending === 'yes',
+        phone: phone || undefined,
+        message: message || undefined,
+        giftName: selectedGift?.name,
+        giftOutcome: outcome ?? '',
+      });
     }
   };
 

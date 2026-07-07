@@ -8,7 +8,7 @@ export function useRsvp() {
   const [status, setStatus] = useState<RsvpStatus>('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const submitRsvp = useCallback(async (input: RsvpInput) => {
+  const submitRsvp = useCallback(async (input: RsvpInput): Promise<boolean> => {
     setStatus('submitting');
     setErrorMessage(null);
 
@@ -21,10 +21,11 @@ export function useRsvp() {
     if (error) {
       setStatus('error');
       setErrorMessage(DEFAULT_RSVP_ERROR_MESSAGE);
-      return;
+      return false;
     }
 
     setStatus('success');
+    return true;
   }, []);
 
   return { status, errorMessage, submitRsvp };

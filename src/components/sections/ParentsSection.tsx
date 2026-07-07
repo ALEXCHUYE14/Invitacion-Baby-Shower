@@ -32,7 +32,7 @@ export function ParentsSection() {
 
         <RevealOnScroll>
           <p className="mx-auto mt-[26px] max-w-[26ch] font-emot text-[clamp(1.15rem,5vw,1.45rem)] italic leading-[1.45] text-goldSoft [text-shadow:0_2px_10px_rgba(0,0,0,.6)]">
-            {EVENT.parentsPhrase}
+            Papá {EVENT.parents.dad} &amp; mamá {EVENT.parents.mom}, {EVENT.parentsPhrase}
           </p>
         </RevealOnScroll>
       </div>

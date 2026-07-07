@@ -69,6 +69,74 @@ npm run build
 
 Corre el type-check de TypeScript y genera el sitio estático en `dist/`. Sirve `dist/` con cualquier hosting estático (Vercel, Netlify, Cloudflare Pages, etc.) configurando las mismas variables de entorno `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY` en el panel del hosting.
 
+## 8. Google Sheets (copia de cada RSVP + regalo elegido)
+
+Cada vez que alguien confirma asistencia, la app **siempre** guarda primero en Supabase (es la fuente de verdad: RSVPs, reservas de regalo y control de stock). Si configuras esto, además se copia una fila a tu Google Sheet — es un extra de solo lectura para ti, nunca bloquea ni rompe el formulario si falla o no está configurado.
+
+### 8.1 Crear el Apps Script dentro de tu Sheet
+
+1. Abre tu spreadsheet: https://docs.google.com/spreadsheets/d/1FDDgW3f8_BsfF1GChbaYTMFz-5dlN0pXyWlvDDZJnnA/edit
+2. Menú **Extensiones → Apps Script**.
+3. Borra el contenido de `Code.gs` y pega esto:
+
+```javascript
+function doPost(e) {
+  try {
+    var data = JSON.parse(e.postData.contents);
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow([
+        'Fecha', 'Nombre completo', '¿Asistirá?', 'Teléfono', 'Mensaje', 'Regalo elegido', 'Estado del regalo',
+      ]);
+    }
+
+    sheet.appendRow([
+      new Date(),
+      data.fullName || '',
+      data.attending || '',
+      data.phone || '',
+      data.message || '',
+      data.giftName || '',
+      data.giftOutcome || '',
+    ]);
+
+    return ContentService.createTextOutput(JSON.stringify({ status: 'ok' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService.createTextOutput(JSON.stringify({ status: 'error', message: String(err) }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+```
+
+4. Guarda (ícono de disquete o `Ctrl+S`). Ponle un nombre al proyecto, por ejemplo "RSVP Baby Shower".
+
+### 8.2 Publicarlo como Web App
+
+1. Arriba a la derecha, botón azul **Implementar → Nueva implementación**.
+2. Junto a "Selecciona el tipo", click en el ícono de engranaje ⚙️ → **Aplicación web**.
+3. Configura:
+   - **Ejecutar como:** Yo (tu cuenta de Google)
+   - **Quién tiene acceso:** Cualquier usuario
+4. Click **Implementar**. Google te pedirá **autorizar permisos** la primera vez (es tu propio script accediendo a tu propio Sheet — aprueba con tu cuenta, aunque salga el aviso de "app no verificada", click en "Avanzado → Ir a... (no seguro)").
+5. Copia la **URL de la aplicación web** que te da (termina en `/exec`). Esa es la que necesitas.
+
+> Si más adelante editas el script, tienes que volver a "Implementar → Administrar implementaciones → ✏️ Editar → Nueva versión → Implementar" para que los cambios surtan efecto en esa misma URL.
+
+### 8.3 Conectarlo a la invitación
+
+Pega esa URL como variable de entorno:
+
+```
+VITE_GOOGLE_SHEETS_URL=https://script.google.com/macros/s/AKfycbwBReZbUm0trTipowXBArd0uJW49wzNOSAKx24P0CeJ-rDLLpSMnUAcFHdqxwZrSF92/exec
+```
+
+- **En local:** agrégala a tu `.env`.
+- **En Vercel:** Project Settings → Environment Variables → agrega `VITE_GOOGLE_SHEETS_URL` con esa URL → vuelve a desplegar (`vercel --prod`) para que el build la incluya.
+
+Cada fila en el Sheet incluirá: fecha, nombre completo, si asistirá, teléfono, mensaje y el regalo que eligió (si eligió uno).
+
 ## Arquitectura
 
 ```

@@ -63,6 +63,10 @@ export function GiftRsvpSection() {
       setFormError('Por favor confirma si asistirás.');
       return;
     }
+    if (attending === 'yes' && !selectedGift) {
+      setFormError('Por favor elige el regalo para el bebé antes de confirmar tu asistencia.');
+      return;
+    }
 
     const rsvpSaved = await submitRsvp({ fullName, attending: attending === 'yes', message: message || undefined });
 
@@ -187,7 +191,7 @@ export function GiftRsvpSection() {
                 {attending === 'yes' && (
                   <div className="mb-5">
                     <label className="mb-[9px] block pl-0.5 font-sans text-[0.68rem] uppercase tracking-[0.22em] text-inkSoft">
-                      ¿Quieres elegir un detalle para el bebé? (opcional)
+                      Elige el regalo para el bebé
                     </label>
 
                     {giftsLoading && (

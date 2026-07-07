@@ -64,14 +64,25 @@ export function EventDetails() {
               </div>
             </div>
 
+            <div className="relative mx-auto mt-6 aspect-square w-full overflow-hidden rounded-2xl border border-goldSoft/70 shadow-[0_20px_44px_-24px_rgba(0,0,0,.55)] [box-shadow:0_20px_44px_-24px_rgba(0,0,0,.55),inset_0_0_0_1px_rgba(63,94,140,.35)]">
+              <iframe
+                src={EVENT.mapsEmbedUrl}
+                title={`Ubicación: ${EVENT.venue}`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+                className="absolute inset-0 h-full w-full border-0"
+              />
+            </div>
+
             <a
               href={EVENT.mapsUrl}
               target="_blank"
               rel="noopener"
-              className="mt-6 flex w-full items-center justify-center gap-2.5 rounded-full bg-ink px-[22px] py-[15px] font-sans text-[0.76rem] font-medium uppercase tracking-[0.14em] text-paper transition-all duration-300 ease-signature hover:-translate-y-0.5 hover:bg-[#2c2933] active:translate-y-0"
+              className="mt-4 flex w-full items-center justify-center gap-2.5 rounded-full bg-ink px-[22px] py-[15px] font-sans text-[0.76rem] font-medium uppercase tracking-[0.14em] text-paper transition-all duration-300 ease-signature hover:-translate-y-0.5 hover:bg-[#2c2933] active:translate-y-0"
             >
               <MapPin size={17} />
-              Ver ubicación en GPS
+              Abrir en Google Maps
             </a>
           </Card>
         </RevealOnScroll>

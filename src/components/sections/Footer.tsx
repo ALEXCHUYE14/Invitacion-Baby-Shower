@@ -15,6 +15,16 @@ export function Footer() {
           {EVENT.footerNote}
         </p>
       </RevealOnScroll>
+
+      <RevealOnScroll>
+        <div className="mx-auto mt-8 w-11 border-t border-goldSoft/30" />
+        <p className="mt-4 font-sans text-[0.68rem] font-medium text-paper/70 [text-shadow:0_1px_8px_rgba(0,0,0,.6)]">
+          Creada por el Ing. Miguel Flores
+        </p>
+        <p className="mt-1 font-sans text-[0.62rem] font-light tracking-[0.02em] text-paper/55 [text-shadow:0_1px_8px_rgba(0,0,0,.6)]">
+          📱 Cel: 924996961 &nbsp;|&nbsp; 📄 RUC: 10747214439
+        </p>
+      </RevealOnScroll>
     </footer>
   );
 }

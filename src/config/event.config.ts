@@ -2,7 +2,7 @@ import bgImage from '../assets/fondo-bienvenida.png';
 import babyImage from '../assets/bebe.jpeg';
 import heroBgImage from '../assets/inicio.png';
 import rsvpBgImage from '../assets/final.png';
-import countdownBgImage from '../assets/fondo-cuenta-regresiva.png';
+import countdownBgImage from '../assets/fondo-cuenta-regresiva.jfif';
 import parentsImage from '../assets/papis.png';
 
 export const EVENT = {
@@ -24,13 +24,14 @@ export const EVENT = {
   venue: 'Colegio de Ingenieros',
   venueHint: 'Al costado de Shalom',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Colegio+de+Ingenieros+del+Peru+Piura',
+  mapsEmbedUrl: 'https://maps.google.com/maps?q=Colegio+de+Ingenieros+del+Peru+Piura&output=embed',
   countdownTitle: 'Falta muy poco',
   countdownNote: 'para conocer a nuestro bebé',
   countdownDoneMessage: '¡Hoy es el gran día!',
   giftsIntro:
     'Tu presencia es nuestro mejor regalo. Si además deseas consentir al bebé, aquí te dejamos algunas ideas.',
   footerNote: '01 · 08 · 2026  ·  Piura',
-  audioSrc: '/assets/audio/te-esperaba.mp3',
+  audioSrc: '/assets/audio/Mi%20Corazon%20Encantado.mp3',
   bgImage,
   babyImage,
   heroBgImage,

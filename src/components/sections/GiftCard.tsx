@@ -1,4 +1,4 @@
-import { Gift as GiftIcon } from 'lucide-react';
+import { Gift as GiftIcon, Lock } from 'lucide-react';
 import { GIFT_IMAGES } from '../../lib/giftImages';
 import type { Gift } from '../../types';
 
@@ -6,6 +6,7 @@ interface GiftCardProps {
   gift: Gift;
   selected: boolean;
   onSelect: (gift: Gift) => void;
+  onBlockedSelect?: (gift: Gift) => void;
 }
 
 const CATEGORY_STYLES: Record<string, { label: string; className: string }> = {
@@ -16,14 +17,22 @@ const CATEGORY_STYLES: Record<string, { label: string; className: string }> = {
   entretenimiento: { label: 'Estimulación', className: 'bg-kiBlueSoft/15 text-kiBlueSoft' },
 };
 
-export function GiftCard({ gift, selected, onSelect }: GiftCardProps) {
+export function GiftCard({ gift, selected, onSelect, onBlockedSelect }: GiftCardProps) {
   const available = gift.total_qty - gift.reserved_qty;
   const isReserved = available <= 0;
   const category = gift.category ? CATEGORY_STYLES[gift.category] : null;
   const imageSrc = gift.image_url ? GIFT_IMAGES[gift.image_url] : undefined;
 
   return (
-    <label className={`relative block ${isReserved ? 'cursor-not-allowed' : 'cursor-pointer'}`}>
+    <label
+      className={`relative block ${isReserved ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+      onClick={(event) => {
+        if (isReserved) {
+          event.preventDefault();
+          onBlockedSelect?.(gift);
+        }
+      }}
+    >
       <input
         type="radio"
         name="selectedGift"
@@ -63,7 +72,7 @@ export function GiftCard({ gift, selected, onSelect }: GiftCardProps) {
         )}
 
         <span
-          className={`mt-auto inline-block rounded-full px-2.5 py-1 font-sans text-[0.64rem] uppercase tracking-[0.12em] ${
+          className={`mt-auto inline-flex items-center justify-center gap-1 rounded-full px-2.5 py-1 font-sans text-[0.64rem] uppercase tracking-[0.12em] ${
             isReserved
               ? 'bg-ink/8 text-inkSoft'
               : selected
@@ -71,6 +80,7 @@ export function GiftCard({ gift, selected, onSelect }: GiftCardProps) {
                 : 'bg-[#5a7d52]/10 text-[#5a7d52]'
           }`}
         >
+          {isReserved && <Lock size={11} />}
           {isReserved ? 'Reservado' : selected ? 'Elegido' : 'Disponible'}
         </span>
       </div>

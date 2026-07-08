@@ -1,5 +1,5 @@
-import { Check, Clock } from 'lucide-react';
-import { useMemo, useState, type FormEvent } from 'react';
+import { Check, Clock, Lock } from 'lucide-react';
+import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { EVENT } from '../../config/event.config';
 import { useGifts } from '../../hooks/useGifts';
 import { useRsvp } from '../../hooks/useRsvp';
@@ -25,6 +25,9 @@ const CATEGORY_GROUPS: { key: string; title: string }[] = [
 
 type GiftOutcome = 'reserved' | 'failed' | null;
 
+const RESERVED_GIFT_MESSAGE =
+  'Este regalo ya se encuentra reservado. ¡Por favor, elige otro grandioso obsequio para el guerrero!';
+
 export function GiftRsvpSection() {
   const { gifts, isLoading: giftsLoading, error: giftsError, reserveGift } = useGifts();
   const { status: rsvpStatus, errorMessage: rsvpError, submitRsvp } = useRsvp();
@@ -37,6 +40,20 @@ export function GiftRsvpSection() {
   const [formError, setFormError] = useState<string | null>(null);
   const [giftOutcome, setGiftOutcome] = useState<GiftOutcome>(null);
   const [isReserving, setIsReserving] = useState(false);
+  const [reservedNotice, setReservedNotice] = useState(false);
+  const reservedNoticeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (reservedNoticeTimeout.current) clearTimeout(reservedNoticeTimeout.current);
+    };
+  }, []);
+
+  const handleBlockedGift = () => {
+    setReservedNotice(true);
+    if (reservedNoticeTimeout.current) clearTimeout(reservedNoticeTimeout.current);
+    reservedNoticeTimeout.current = setTimeout(() => setReservedNotice(false), 3500);
+  };
 
   const groupedGifts = useMemo(
     () =>
@@ -66,6 +83,15 @@ export function GiftRsvpSection() {
     if (attending === 'yes' && !selectedGift) {
       setFormError('Por favor elige el regalo para el bebé antes de confirmar tu asistencia.');
       return;
+    }
+    if (attending === 'yes' && selectedGift) {
+      const liveGift = gifts.find((gift) => gift.id === selectedGift.id);
+      const stillAvailable = liveGift && liveGift.total_qty - liveGift.reserved_qty > 0;
+      if (!stillAvailable) {
+        setSelectedGift(null);
+        setFormError(RESERVED_GIFT_MESSAGE);
+        return;
+      }
     }
 
     const rsvpSaved = await submitRsvp({ fullName, attending: attending === 'yes', message: message || undefined });
@@ -99,7 +125,17 @@ export function GiftRsvpSection() {
   const isDone = rsvpStatus === 'success';
 
   return (
-    <section className="py-[clamp(44px,11vw,68px)] pb-[clamp(20px,6vw,34px)]">
+    <>
+      {reservedNotice && (
+        <div
+          role="alert"
+          className="animate-tick fixed inset-x-4 top-4 z-[95] mx-auto flex max-w-[420px] items-center gap-2.5 rounded-2xl border border-saiyanGold/50 bg-gradient-to-r from-saiyanDeep to-saiyan px-4 py-3 text-center font-sans text-[0.8rem] font-medium text-paper shadow-[0_14px_34px_-14px_rgba(232,121,43,.65)]"
+        >
+          <Lock size={16} className="flex-none" />
+          <span>{RESERVED_GIFT_MESSAGE}</span>
+        </div>
+      )}
+      <section className="py-[clamp(44px,11vw,68px)] pb-[clamp(20px,6vw,34px)]">
       <div className="mx-auto w-full max-w-[560px] px-[clamp(22px,6vw,34px)]">
         <RevealOnScroll className="mb-[34px] text-center">
           <p className="text-crisp font-sans text-[0.68rem] font-light uppercase tracking-[0.4em] text-paper">
@@ -223,6 +259,7 @@ export function GiftRsvpSection() {
                                   gift={gift}
                                   selected={selectedGift?.id === gift.id}
                                   onSelect={handleSelectGift}
+                                  onBlockedSelect={handleBlockedGift}
                                 />
                               ))}
                             </div>
@@ -269,6 +306,7 @@ export function GiftRsvpSection() {
           </Card>
         </RevealOnScroll>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

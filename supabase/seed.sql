@@ -6,11 +6,11 @@ truncate table public.gift_reservations, public.gifts restart identity cascade;
 
 insert into public.gifts (name, description, category, image_url, total_qty, sort_order) values
 -- A. Cuota / aporte en efectivo (5 cupos independientes)
-('Aporte Yape S/100 · Cupo 1', 'Un aporte directo por Yape para lo que más necesiten los papás.', 'cuota', null, 1, 1),
-('Aporte Yape S/100 · Cupo 2', 'Un aporte directo por Yape para lo que más necesiten los papás.', 'cuota', null, 1, 2),
-('Aporte Yape S/100 · Cupo 3', 'Un aporte directo por Yape para lo que más necesiten los papás.', 'cuota', null, 1, 3),
-('Aporte Yape S/100 · Cupo 4', 'Un aporte directo por Yape para lo que más necesiten los papás.', 'cuota', null, 1, 4),
-('Aporte Yape S/100 · Cupo 5', 'Un aporte directo por Yape para lo que más necesiten los papás.', 'cuota', null, 1, 5),
+('Aporte Yape S/100 · Cupo 1', 'Un aporte directo por Yape para lo que más necesiten los papás.', 'cuota', '49.jfif', 1, 1),
+('Aporte Yape S/100 · Cupo 2', 'Un aporte directo por Yape para lo que más necesiten los papás.', 'cuota', '49.jfif', 1, 2),
+('Aporte Yape S/100 · Cupo 3', 'Un aporte directo por Yape para lo que más necesiten los papás.', 'cuota', '49.jfif', 1, 3),
+('Aporte Yape S/100 · Cupo 4', 'Un aporte directo por Yape para lo que más necesiten los papás.', 'cuota', '49.jfif', 1, 4),
+('Aporte Yape S/100 · Cupo 5', 'Un aporte directo por Yape para lo que más necesiten los papás.', 'cuota', '49.jfif', 1, 5),
 
 -- B. Artículos mayores e infraestructura
 ('Cuna', null, 'mayores', '1.jfif', 1, 10),
@@ -24,6 +24,8 @@ insert into public.gifts (name, description, category, image_url, total_qty, sor
 ('Alfombra antigolpes', null, 'mayores', '29.jpg', 1, 18),
 ('Gimnasio estimulador', null, 'mayores', '31.jpg', 1, 19),
 ('Silla mecedora BB', null, 'mayores', '33.jpg', 1, 20),
+('Tina bañera para bebé', null, 'mayores', '52.jfif', 1, 21),
+('Roperito para bebé', null, 'mayores', '53.jfif', 1, 22),
 
 -- C. Lactancia, alimentación e higiene eléctrica
 ('Aspirador nasal eléctrico', null, 'lactancia', '9.jfif', 1, 30),
@@ -66,6 +68,6 @@ insert into public.gifts (name, description, category, image_url, total_qty, sor
 ('Juego de sábanas para cuna', null, 'ropa', '48.jpg', 1, 76),
 
 -- E. Entretenimiento, estimulación y adicionales
-('Monitor para bebé (cámara)', null, 'entretenimiento', null, 1, 80),
-('Nido colecho + pañitos', null, 'entretenimiento', null, 1, 81),
+('Monitor para bebé (cámara)', null, 'entretenimiento', '50.jfif', 1, 80),
+('Nido colecho + pañitos', null, 'entretenimiento', '51.jfif', 1, 81),
 ('Sonajeros / juguetes de estimulación', null, 'entretenimiento', '32.jpg', 1, 82);
